@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@media (dynamic-range: standard) {
+    .green-if-hdr {
+        color: red;
+    }
+}
+@media (dynamic-range: high) {
+    .green-if-hdr {
+        color: green;
+    }
+}
+</style>
+</head>
+<body>
+    <p class="green-if-hdr">This text will be green if your display supports HDR, red if not, and black if this CSS feature is unsupported.</p>
+</body>
+</html>
