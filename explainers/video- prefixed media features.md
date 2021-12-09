@@ -6,7 +6,7 @@
 
 While CSS media queries do an adequate job of describing the characteristics of the graphics output medium for a webpage, some user-agents have different rendering paths for different types of web content, with different characteristics and capabilities for each path.
 
-The case we're concerned with here are smart TVs and dongles, as many render video and non-video content ("graphics") onto separate "planes"(referred to as *bi-plane* rendering). Many of these devices are capable of wider color gamuts, luminance ranges, and resolution, for their video plane than their graphics plane, hence it's critical to be able to disambiguate the target plane when querying these properties.
+The case we're concerned with here are smart TVs and dongles, as many render video and non-video content ("graphics") onto separate "planes"(referred to as *bi-plane* rendering). Many of these devices are capable of wider color gamuts and luminance ranges for their video plane than their graphics plane, hence it's critical to be able to disambiguate the target plane when querying these properties.
 
 This ambiguity is prevalent in many smart TVs, and is unlikely to improve over time.
 
@@ -14,13 +14,10 @@ This ambiguity is prevalent in many smart TVs, and is unlikely to improve over t
 
 Specific, relevant media features such as `color-gamut`, `dynamic-range`, and `resolution` will have `video-` prefixed variants added which accept the same query parameters as their un-prefixed counterparts. User agents on bi-plane devices will run the `video-` queries against the properties of the video plane instead of the graphics plane, and user agents running on single-plane devices will treat both variants equivalently.
 
-The full set of features under consideration is:
+The current set of features under consideration is:
 
 - `color-gamut` -> `video-color-gamut`
 - `dynamic-range` -> `video-dynamic-range`
-- `resolution` -> `video-resolution`
-- `width` -> `video-width`
-- `height` -> `video-height`
 
 ## Goals
 
